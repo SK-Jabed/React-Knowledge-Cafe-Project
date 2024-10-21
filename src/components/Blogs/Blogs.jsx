@@ -11,8 +11,8 @@ const Blogs = () => {
     }, [])
 
     return (
-        <div>
-            
+        <div className="col-span-2">
+            <h1 className="text-4xl">Blogs: {blogs.length}</h1>
         </div>
     );
 };

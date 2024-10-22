@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { LuBookmark } from "react-icons/lu";
 
-const Blog = ({blog, handleAddToBookmark}) => {
+const Blog = ({blog, handleAddToBookmark, handleMarkAsRead}) => {
     const {title, cover, author, author_img, posted_date, reading_time, hashtags} = blog;
     return (
-        <div className="mb-20 flex flex-col gap-6">
+        <div className="mb-20 space-y-4">
             <img className="w-full h-full rounded-lg" src={cover} alt={`Cover Picture of ${title}`}></img>
             <div className="flex justify-between">
                 <div className="flex items-center">
@@ -26,13 +26,15 @@ const Blog = ({blog, handleAddToBookmark}) => {
                     hashtags.map((hash, idx) => <span key={idx}><a href="">#{hash}</a></span>)
                 }
             </p>
+            <button onClick={() => handleMarkAsRead(reading_time)} className="text-blue-600 font-semibold underline">Mark as read</button>
         </div>
     );
 };
 
 Blog.propTypes = {
     blog: PropTypes.object.isRequired,
-    handleAddToBookmark: PropTypes.func.isRequired
+    handleAddToBookmark: PropTypes.func.isRequired,
+    handleMarkAsRead: PropTypes.func
 }
 
 export default Blog;

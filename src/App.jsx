@@ -24,8 +24,7 @@ function App() {
       <main className='container mx-auto w-11/12 md:grid grid-cols-3 gap-3'>
       <Blogs handleAddToBookmark={handleAddToBookmark} handleMarkAsRead={handleMarkAsRead}></Blogs>
       <Bookmarks bookmarks={bookmarks} readingTime={readingTime}></Bookmarks>
-      </main>
-      
+      </main>      
     </>
   )
 }
